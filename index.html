@@ -17,25 +17,25 @@
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        @keyframes scrollCode {
+        @keyframes scrollMath {
             0% { transform: translateY(100%); }
             100% { transform: translateY(-100%); }
         }
 
-        /* Material UI-inspired background */
+        /* VS Code-inspired background */
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #d4d4d4;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background: linear-gradient(to right, #f5f5f5, #e0e0e0);
+            background-color: #1e1e1e; /* VS Code dark background */
             animation: fadeIn 2s ease;
         }
 
         h1, h2 {
-            color: #3f51b5;
+            color: #569cd6; /* VS Code keyword blue */
             text-align: center;
             font-family: 'Roboto', sans-serif;
             padding-bottom: 10px;
@@ -47,18 +47,19 @@
             font-size: 1.5em;
             margin-bottom: 20px;
             font-style: italic;
-            color: #3f51b5;
+            color: #ce9178; /* VS Code string color */
             animation: slideIn 1.5s ease-out;
         }
 
-        /* Material UI-like container with shadow */
-        #scheduleOutput, .code-container {
-            background-color: white;
+        /* VS Code-like container with shadow */
+        #scheduleOutput, .math-container {
+            background-color: #252526; /* Slightly lighter dark background */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
             animation: fadeIn 1.5s ease-out;
+            color: #d4d4d4; /* Default text color */
         }
 
         table {
@@ -70,30 +71,30 @@
         th, td {
             padding: 15px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #3c3c3c; /* VS Code border color */
         }
 
         th {
-            background-color: #3f51b5;
+            background-color: #007acc; /* VS Code blue */
             color: white;
             font-weight: bold;
             text-transform: uppercase;
         }
 
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #2d2d2d; /* VS Code even row color */
         }
 
         tr:hover {
-            background-color: #e0e0e0;
+            background-color: #3e3e3e; /* VS Code hover color */
         }
 
-        /* Buttons with Material UI styles */
+        /* Buttons with VS Code styles */
         select, button {
             padding: 10px;
             font-size: 16px;
             margin: 10px;
-            background-color: #3f51b5;
+            background-color: #007acc;
             color: white;
             border: none;
             border-radius: 4px;
@@ -102,23 +103,23 @@
         }
 
         select:hover, button:hover {
-            background-color: #303f9f;
+            background-color: #005f99; /* Darker hover color */
             transform: scale(1.05);
         }
 
-        /* Animated coding section */
-        .code-container {
+        /* Animated math section */
+        .math-container {
             font-family: 'Courier New', monospace;
-            color: #76ff03;
-            background-color: #263238;
+            color: #b5cea8; /* VS Code comment color */
+            background-color: #252526;
             padding: 20px;
             height: 200px;
             overflow: hidden;
             position: relative;
         }
 
-        .code {
-            animation: scrollCode 10s linear infinite;
+        .math {
+            animation: scrollMath 10s linear infinite;
             white-space: pre-wrap;
         }
 
@@ -128,7 +129,7 @@
             text-align: center;
             margin-top: 20px;
             font-style: italic;
-            color: #666;
+            color: #d4d4d4;
             animation: fadeIn 2s ease;
         }
     </style>
@@ -156,29 +157,16 @@
 
     <div id="scheduleOutput"></div>
 
-    <div class="code-container">
-        <div class="code">
-            function calculateRisk(S, r, sigma) {<br>
-            &nbsp;&nbsp;let dt = 0.01;<br>
-            &nbsp;&nbsp;let V = S;<br>
-            &nbsp;&nbsp;for (let i = 0; i &lt; 100; i++) {<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;V += r * V * dt;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;V += sigma * S * Math.sqrt(dt);<br>
-            &nbsp;&nbsp;}<br>
-            &nbsp;&nbsp;return V;<br>
-            }<br>
-            const finalValue = calculateRisk(100, 0.05, 0.2);<br>
-            console.log(finalValue);<br>
-            // Simulating financial risks...<br>
-            function calculateRisk(S, r, sigma) {<br>
-            &nbsp;&nbsp;let dt = 0.01;<br>
-            &nbsp;&nbsp;let V = S;<br>
-            &nbsp;&nbsp;for (let i = 0; i &lt; 100; i++) {<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;V += r * V * dt;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;V += sigma * S * Math.sqrt(dt);<br>
-            &nbsp;&nbsp;}<br>
-            &nbsp;&nbsp;return V;<br>
-            }<br>
+    <div class="math-container">
+        <div class="math">
+            E = mc^2<br>
+            a^2 + b^2 = c^2<br>
+            \[ \int_a^b f(x) \,dx \]<br>
+            \[ e^{i\pi} + 1 = 0 \]<br>
+            \[ \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \]<br>
+            F(x) = \int f(x)\, dx<br>
+            \[ P(A \cap B) = P(A) \times P(B) \text{ if A and B are independent} \]<br>
+            \[ \frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2} + rS\frac{\partial V}{\partial S} - rV = 0 \]<br>
         </div>
     </div>
 
